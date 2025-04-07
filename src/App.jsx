@@ -8,18 +8,23 @@ import Usuarios from './Componentes/Usuarios';
 
 import './App.css'
 
-function App(){
-    return (
-        <>
-        <h1>app</h1>
-        <Aleatorios />
-        <Capturados_Originales />
-        <Detalle />
-        <Favoritos />
-        <Listas />
-        <Usuarios />
-        </>
-    )
+function App() {
+  return (
+    <Router>
+
+      <Menu />
+
+      <Routes>
+        <Route path="/" element={<Lista />} />
+        <Route path="/usuarios" element={<Usuarios />} />
+        <Route path="/aleatorios" element={<Aleatorios />} />
+        <Route path="/capturados" element={<Capturados />} />
+        <Route path="/favoritos" element={<Favoritos />} />
+        <Route path="/:nombre" element={<Detalle />} />
+      </Routes>
+
+    </Router>
+  );
 }
 
 export default App;
