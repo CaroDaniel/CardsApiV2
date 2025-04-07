@@ -11,9 +11,6 @@ import './App.css'
 function App() {
   return (
     <Router>
-
-      <Menu />
-
       <Routes>
         <Route path="/" element={<Listas />} />
         <Route path="/usuarios" element={<Usuarios />} />
@@ -21,7 +18,6 @@ function App() {
         <Route path="/capturados" element={<Capturados_Originales />} />
         <Route path="/favoritos" element={<Favoritos />} />
       </Routes>
-
     </Router>
   );
 }
