@@ -6,12 +6,16 @@ import Detalle from './Componentes/Detalle';
 import Favoritos from './Componentes/Favoritos';
 import Listas from './Componentes/Listas';
 import Usuarios from './Componentes/Usuarios';
+import Menu from './Componentes/Menu';
 
 import './App.css'
 
 function App() {
   return (
     <Router>
+
+      <Menu />
+
       <Routes>
         <Route path="/" element={<Listas />} />
         <Route path="/usuarios" element={<Usuarios />} />
