@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Aleatorios from './Componentes/Aleatorios';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Capturados_Originales from './Componentes/Capturados_Originales';
 import Detalle from './Componentes/Detalle';
 import Favoritos from './Componentes/Favoritos';
