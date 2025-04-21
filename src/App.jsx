@@ -22,6 +22,7 @@ function App() {
         <Route path="/aleatorios" element={<Aleatorios />} />
         <Route path="/capturados" element={<Capturados_Originales />} />
         <Route path="/favoritos" element={<Favoritos />} />
+        <Route path="/detalle/:name" element={<Detalle />} />
       </Routes>
     </Router>
   );

@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
 import Filtro from '../Filtro';
+import { useNavigate } from "react-router-dom";
 import './style.css'
 
 function Listas() {
   const [data, setData] = useState([]);
   const [tipoSeleccionado, setTipoSeleccionado] = useState('All');
   const [busqueda, setBusqueda] = useState('');
+  const navigate = useNavigate();
 
   useEffect(() => {
     const obtenerDatos = async () => {
@@ -29,6 +31,18 @@ function Listas() {
     setTipoSeleccionado(tipo);
   };
 
+  let resultados = data;
+  if (busqueda.length >= 3 && isNaN(busqueda)) {
+    resultados = data.filter(pokemon =>
+      pokemon.name.toLowerCase().includes(busqueda.toLowerCase())
+    );
+  }
+  if (!isNaN(busqueda)) {
+    resultados = data.filter(pokemon =>
+      pokemon.url.includes('/' + busqueda)
+    );
+  }
+
   return (
     <>
     <input
@@ -40,8 +54,9 @@ function Listas() {
       />
       <Filtro onTipoChange={handleTipoChange} />
       <section className='c-lista'>
-        {data.map((pokemon, index) => (
+        {resultados.map((pokemon, index) => (
           <div className='c-lista-pokemon'
+          onClick={() => navigate(`/detalle/${pokemon.name}`)}
             key={index}>
             <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.url.split("/")[6]}.png`}
               alt={`Pokémon ${pokemon.name}`} width='auto' height='60' loading='lazy'
