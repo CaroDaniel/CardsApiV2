@@ -1,0 +1,20 @@
+.c-lista {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 16px; /* Ajusta el espacio entre tarjetas */
+  padding: 20px;
+}
+
+.c-lista-pokemon {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  text-align: center;
+  padding: 10px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.c-lista-pokemon:hover {
+  transform: scale(1.05);
+}

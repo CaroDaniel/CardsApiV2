@@ -8,8 +8,6 @@ import Listas from './Componentes/Listas';
 import Usuarios from './Componentes/Usuarios';
 import Menu from './Componentes/Menu';
 
-import { AppProvider } from "./Contexto/Contexto";
-
 import './App.css'
 import { AppProvider } from "./Contexto/Contexto";
 

@@ -1,9 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import Filtro from '../Filtro';
 import { useNavigate } from "react-router-dom";
+import { AppContext } from '../../Contexto/Contexto';
 import './style.css'
 
 function Listas() {
+  const { data, setData, tipoSeleccionado, setTipoSeleccionado } = useContext(AppContext);
   const [busqueda, setBusqueda] = useState('');
   const navigate = useNavigate();
 
@@ -37,7 +39,7 @@ function Listas() {
       <Filtro onTipoChange={handleTipoChange} />
       <section className='c-lista'>
         {resultados.map((pokemon, index) => (
-          <div className='c-lista-pokemon'
+          <div class="diseno" className='c-lista-pokemon'
           onClick={() => navigate(`/detalle/${pokemon.name}`)}
             key={index}>
             <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.url.split("/")[6]}.png`}
