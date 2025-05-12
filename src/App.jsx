@@ -8,23 +8,28 @@ import Listas from './Componentes/Listas';
 import Usuarios from './Componentes/Usuarios';
 import Menu from './Componentes/Menu';
 
+import { AppProvider } from "./Contexto/Contexto";
+
 import './App.css'
+import { AppProvider } from "./Contexto/Contexto";
 
 function App() {
   return (
-    <Router>
+    <AppProvider>
+      <Router>
 
-      <Menu />
+        <Menu />
 
-      <Routes>
-        <Route path="/" element={<Listas />} />
-        <Route path="/usuarios" element={<Usuarios />} />
-        <Route path="/aleatorios" element={<Aleatorios />} />
-        <Route path="/capturados" element={<Capturados_Originales />} />
-        <Route path="/favoritos" element={<Favoritos />} />
-        <Route path="/detalle/:name" element={<Detalle />} />
-      </Routes>
-    </Router>
+        <Routes>
+          <Route path="/" element={<Listas />} />
+          <Route path="/usuarios" element={<Usuarios />} />
+          <Route path="/aleatorios" element={<Aleatorios />} />
+          <Route path="/capturados" element={<Capturados_Originales />} />
+          <Route path="/favoritos" element={<Favoritos />} />
+          <Route path="/detalle/:name" element={<Detalle />} />
+        </Routes>
+      </Router>
+    </AppProvider>
   );
 }
 
