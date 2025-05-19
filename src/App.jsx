@@ -7,8 +7,9 @@ import Favoritos from './Componentes/Favoritos';
 import Listas from './Componentes/Listas';
 import Usuarios from './Componentes/Usuarios';
 import Menu from './Componentes/Menu';
-import { supabase } from "./supabase";
 import Login from './Componentes/login';
+import { supabase } from "./supabase";
+
 import './App.css'
 import { AppProvider } from "./Contexto/Contexto";
 
