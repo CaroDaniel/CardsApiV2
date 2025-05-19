@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Aleatorios from './Componentes/Aleatorios';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import Capturados_Originales from './Componentes/Capturados_Originales';
 import Detalle from './Componentes/Detalle';
 import Favoritos from './Componentes/Favoritos';
@@ -8,6 +8,7 @@ import Listas from './Componentes/Listas';
 import Usuarios from './Componentes/Usuarios';
 import Menu from './Componentes/Menu';
 import Login from './Componentes/login';
+import Registro from './Componentes/registro';
 import { supabase } from "./supabase";
 
 import './App.css'
@@ -45,6 +46,7 @@ function App() {
           <Route path="/favoritos" element={usuario ? <Favoritos /> : <Navigate to="/login" />} />
           <Route path="/detalle/:name" element={usuario ? <Detalle /> : <Navigate to="/login" />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/registro" element={<Registro/>} />
         </Routes>
       </Router>
     </AppProvider>
