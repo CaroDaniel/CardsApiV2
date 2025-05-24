@@ -9,7 +9,9 @@ import Usuarios from './Componentes/Usuarios';
 import Menu from './Componentes/Menu';
 import Login from './Componentes/login';
 import Registro from './Componentes/registro';
+import Administrador from "./Componentes/Administrador";
 import { supabase } from "./supabase";
+
 
 import './App.css'
 import { AppProvider } from "./Contexto/Contexto";
@@ -45,6 +47,8 @@ function App() {
           <Route path="/capturados" element={usuario ? <Capturados_Originales /> : <Navigate to="/login" />} />
           <Route path="/favoritos" element={usuario ? <Favoritos /> : <Navigate to="/login" />} />
           <Route path="/detalle/:name" element={usuario ? <Detalle /> : <Navigate to="/login" />} />
+
+          <Route path="/administrador" element={usuario ? <Administrador /> : <Navigate to="/login" />} />
           <Route path="/login" element={<Login />} />
           <Route path="/registro" element={<Registro/>} />
         </Routes>
